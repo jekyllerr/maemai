@@ -324,7 +324,7 @@ async def inline_rp_handler(query: types.InlineQuery):
         }
         requests[request_id] = request_data
         
-        initiator_case = action.get("initiator_case", "accusative")
+        "target_case": action.get("target_case", "accusative")
         user_suffix = get_suffix(user_name, case=initiator_case)
             
         message_body = action["message_text"].format(
@@ -333,13 +333,6 @@ async def inline_rp_handler(query: types.InlineQuery):
         )
         
         message_text = f"  💭 | {message_body}"  # кастомный emoji
-
-        # UTF-16 оффсет для кликабельного имени
-        def utf16_offset(text, sub):
-            return len(text[:text.find(sub)].encode('utf-16-le')) // 2
-
-        def utf16_len(text):
-            return len(text.encode('utf-16-le')) // 2
 
         name_offset = utf16_offset(message_text, user_name)
         name_length = utf16_len(user_name)
@@ -409,12 +402,13 @@ async def accept_handler(callback: types.CallbackQuery):
 
     user1_id = request_data["initiator_id"]
     user1_name = request_data["initiator_name"]
+    initiator_case = request_data.get("initiator_case", "accusative")
+    user1_suffix = get_suffix(user1_name, case=initiator_case)
 
     user2 = callback.from_user
     user2_id = user2.id
     user2_name = user2.full_name
-
-    target_case = action.get("target_case", "accusative")
+    target_case = request_data.get("target_case", "accusative")
     user2_suffix = get_suffix(user2_name, case=target_case)
 
     final_text = request_data["accept_text"].format(
@@ -483,10 +477,10 @@ async def decline_handler(callback: types.CallbackQuery):
         await callback.answer("Кем үз-үзен рп-лап утыра монда?", show_alert=True)
         return
 
-    request_data["status"] = "declined"
     user1_id = request_data["initiator_id"]
     user1_name = request_data["initiator_name"]
-    user1_suffix = get_suffix(user1_name)
+    initiator_case = request_data.get("initiator_case", "accusative")
+    user1_suffix = get_suffix(user1_name, case=initiator_case)
 
     user2 = callback.from_user
     user2_id = user2.id
@@ -527,6 +521,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
