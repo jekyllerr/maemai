@@ -1,9 +1,11 @@
 import os
 import logging
+from aiohttp import web
 from aiogram import Bot, Dispatcher
 from aiogram.types import Update
 from routers.rp import rp_router
 from routers.admin import admin_router
+
 logging.basicConfig(level=logging.INFO)
 
 API_TOKEN = os.environ.get("BOT_TOKEN")
@@ -14,9 +16,16 @@ dp = Dispatcher()
 dp.include_router(rp_router)
 dp.include_router(admin_router)
 
-# webhook handler
-async def handler(event, context):
-    update = Update.from_dict(event)
+async def handle(request):
+    data = await request.json()
+    update = Update.from_dict(data)
     await dp.process_update(update)
-    return {"statusCode": 200, "body": "ok"}
+    return web.Response(text="ok")
 
+app = web.Application()
+app.router.add_post("/", handle)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render задаёт PORT
+    web.run_app(app, host="0.0.0.0", port=port)
+    
