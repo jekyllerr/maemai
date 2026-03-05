@@ -325,8 +325,8 @@ async def inline_rp_handler(query: types.InlineQuery):
         requests[request_id] = request_data
         
         initiator_case = action.get("initiator_case", "accusative")
-            user_suffix = get_suffix(user_name, case=initiator_case)
-
+        user_suffix = get_suffix(user_name, case=initiator_case)
+            
         message_body = action["message_text"].format(
             user=user_name,
             user_suffix=user_suffix
@@ -527,6 +527,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
