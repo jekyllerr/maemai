@@ -7,7 +7,6 @@ from aiogram.types import (
     InlineQueryResultArticle,
     InputTextMessageContent
 )
-from aiogram import Router
 
 rp_router = Router()
 requests = {}
@@ -324,7 +323,7 @@ async def inline_rp_handler(query: types.InlineQuery):
         }
         requests[request_id] = request_data
         
-        "target_case": action.get("target_case", "accusative")
+        inıtiator_case = request_data.get("initiator_case", "accusative")
         user_suffix = get_suffix(user_name, case=initiator_case)
             
         message_body = action["message_text"].format(
@@ -521,6 +520,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
