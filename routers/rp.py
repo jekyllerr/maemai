@@ -309,6 +309,10 @@ async def inline_rp_handler(query: types.InlineQuery):
 
     for action in rp_commands:
         request_id = str(uuid4())
+
+        initiator_case = action.get("initiator_case", "accusative")
+        target_case = action.get("target_case", "accusative")
+
         request_data = {
             "id": request_id,
             "initiator_id": user.id,
@@ -317,21 +321,22 @@ async def inline_rp_handler(query: types.InlineQuery):
             "message_text": action["message_text"],
             "accept_text": action["accept_text"],
             "emoji_id": action["emoji_id"],
-            "case": action.get("case", "accusative"),  # ← ВОТ ЭТО ДОБАВЬ
+            "initiator_case": initiator_case,
+            "target_case": target_case,
             "status": "pending",
             "thumb_url": action.get("thumb_url")
         }
+
         requests[request_id] = request_data
-        
-        inıtiator_case = request_data.get("initiator_case", "accusative")
+
         user_suffix = get_suffix(user_name, case=initiator_case)
-            
+
         message_body = action["message_text"].format(
             user=user_name,
             user_suffix=user_suffix
         )
-        
-        message_text = f"  💭 | {message_body}"  # кастомный emoji
+
+        message_text = f"💭 | {message_body}"
 
         name_offset = utf16_offset(message_text, user_name)
         name_length = utf16_len(user_name)
@@ -339,8 +344,8 @@ async def inline_rp_handler(query: types.InlineQuery):
         entities = [
             MessageEntity(
                 type="custom_emoji",
-                offset=0,              # emoji в самом начале
-                length=2,              # кастомный emoji = 2 UTF-16
+                offset=0,
+                length=2,
                 custom_emoji_id=action["emoji_id"]
             ),
             MessageEntity(
@@ -351,9 +356,8 @@ async def inline_rp_handler(query: types.InlineQuery):
             )
         ]
 
-        # Inline клавиатура
         keyboard = InlineKeyboardMarkup(
-            inline_keyboard=[[ 
+            inline_keyboard=[[
                 InlineKeyboardButton(
                     text="✅ Кабул ит",
                     callback_data=f"accept:{request_id}"
@@ -365,7 +369,6 @@ async def inline_rp_handler(query: types.InlineQuery):
             ]]
         )
 
-        # Добавляем результат в список
         results.append(
             InlineQueryResultArticle(
                 id=request_id,
@@ -385,14 +388,18 @@ async def inline_rp_handler(query: types.InlineQuery):
 # ----- accept handler -----
 @rp_router.callback_query(F.data.startswith("accept:"))
 async def accept_handler(callback: types.CallbackQuery):
+
     request_id = callback.data.split(":")[1]
     request_data = requests.get(request_id)
+
     if not request_data:
         await callback.answer("Тәкъдим табылмады.", show_alert=True)
         return
+
     if request_data["initiator_id"] == callback.from_user.id:
         await callback.answer("Кем үз-үзен рп-лап утыра монда?", show_alert=True)
         return
+
     if request_data["status"] != "pending":
         await callback.answer("Бу RP тәмамланган иде.", show_alert=True)
         return
@@ -401,12 +408,14 @@ async def accept_handler(callback: types.CallbackQuery):
 
     user1_id = request_data["initiator_id"]
     user1_name = request_data["initiator_name"]
+
     initiator_case = request_data.get("initiator_case", "accusative")
     user1_suffix = get_suffix(user1_name, case=initiator_case)
 
     user2 = callback.from_user
     user2_id = user2.id
     user2_name = user2.full_name
+
     target_case = request_data.get("target_case", "accusative")
     user2_suffix = get_suffix(user2_name, case=target_case)
 
@@ -416,10 +425,8 @@ async def accept_handler(callback: types.CallbackQuery):
         user2_suffix=user2_suffix
     )
 
-    # Добавляем эмодзи в начале
     text = f"🫧 | {final_text}"
 
-    # Определяем, как user2 реально выглядит в тексте
     if "{user2_suffix}" in request_data["accept_text"]:
         user2_text = f"{user2_name}{user2_suffix}"
     else:
@@ -462,6 +469,7 @@ async def accept_handler(callback: types.CallbackQuery):
         print("Хата accept:", e)
 
     requests.pop(request_id, None)
+
     await callback.answer()
 
 # ----- decline handler -----
@@ -520,6 +528,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
