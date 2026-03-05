@@ -415,7 +415,7 @@ async def accept_handler(callback: types.CallbackQuery):
     user2_name = user2.full_name
 
     target_case = action.get("target_case", "accusative")
-        user2_suffix = get_suffix(user2_name, case=target_case)
+    user2_suffix = get_suffix(user2_name, case=target_case)
 
     final_text = request_data["accept_text"].format(
         user1=user1_name,
@@ -527,6 +527,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
