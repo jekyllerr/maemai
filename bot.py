@@ -21,7 +21,7 @@ dp.include_router(admin_router)
 async def handle_webhook(request: web.Request):
     try:
         data = await request.json()
-        update = Update.parse_obj(data)  # корректно создаём объект Update
+        update = Update.model_validate(data)  # корректно создаём объект Update
         await dp.feed_update(bot=bot, update=update)  # передаём bot и update
         return web.Response(text="ok")
     except Exception as e:
@@ -36,3 +36,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     logging.info(f"Запуск вебхука на порту {port}")
     web.run_app(app, host="0.0.0.0", port=port)
+
