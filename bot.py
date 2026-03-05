@@ -14,8 +14,9 @@ dp = Dispatcher()
 dp.include_router(rp_router)
 dp.include_router(admin_router)
 
-# webhook handler для Яндекс.Облако
+# webhook handler
 async def handler(event, context):
     update = Update.from_dict(event)
     await dp.process_update(update)
     return {"statusCode": 200, "body": "ok"}
+
