@@ -16,6 +16,7 @@ requests = {}
 rp_commands = [
     {
         "title": "Кочакланышырга",
+        "case": "possesive",
         "description": "Әңгәмәдәш белән кочакланышырга",
         "thumb_url": "https://i.pinimg.com/736x/c0/98/ad/c098ad1a516843395c99039def9da66f.jpg",
         "message_text": "{user}{user_suffix} кочакланышасы килә",
@@ -505,3 +506,4 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
