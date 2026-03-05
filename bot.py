@@ -19,8 +19,3 @@ async def handler(event, context):
     update = Update.from_dict(event)
     await dp.process_update(update)
     return {"statusCode": 200, "body": "ok"}
-
-# Для локальной отладки через polling
-if __name__ == "__main__":
-    import asyncio
-    asyncio.run(dp.start_polling(bot))
