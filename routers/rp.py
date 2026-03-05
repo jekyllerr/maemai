@@ -20,7 +20,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/c0/98/ad/c098ad1a516843395c99039def9da66f.jpg",
         "message_text": "{user}{user_suffix} кочакланышасы килә",
         "accept_text": "{user1} {user2} белән кочакланышты",
-        "emoji_id": "5258417246056754328"
+        "emoji_id": "5258417246056754328",
         "initiator_case": "possessive"
     },
     {
@@ -29,7 +29,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/21/fb/d2/21fbd2226daa89d323c4581ae112c240.jpg",
         "message_text": "{user}{user_suffix} башыңнан сыйпыйсы килә",
         "accept_text": "{user1} {user2} башыннан сыйпады",
-        "emoji_id": "5190923814980045139"
+        "emoji_id": "5190923814980045139",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -39,7 +39,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/60/c2/80/60c2806881ff18faf834da9cbddb02b2.jpg",
         "message_text": "{user}{user_suffix} кыйныйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} кыйнады",
-        "emoji_id": "5260636717651603317"
+        "emoji_id": "5260636717651603317",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -49,7 +49,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/fd/20/d4/fd20d45c9620841960fc1c10885ea4c1.jpg",
         "message_text": "{user}{user_suffix} гаепле итәсе килә",
         "accept_text": "{user1} {user2}{user2_suffix} гаепле итте",
-        "emoji_id": "5258503463230253720"
+        "emoji_id": "5258503463230253720",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -59,7 +59,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/92/54/8e/92548e09176d3ea2f780c32cb97db99e.jpg",
         "message_text": "{user}{user_suffix} сугышасы килә",
         "accept_text": "{user1} {user2} белән сугышты",
-        "emoji_id": "5361597229683449359"
+        "emoji_id": "5361597229683449359",
         "initiator_case": "possessive"
     },
     {
@@ -68,7 +68,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/67/b9/3f/67b93f5e8576918194be9e37bed91c73.jpg",
         "message_text": "{user}{user_suffix} кунакка чакырасы килә",
         "accept_text": "{user1} {user2}{user2_suffix} кунакка чакырды",
-        "emoji_id": "5260681054598999309"
+        "emoji_id": "5260681054598999309",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -78,7 +78,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/ec/63/8f/ec638fc2fb82ae17518275daceaaf7e0.jpg",
         "message_text": "{user}{user_suffix} кутакка утырасы килә",
         "accept_text": "{user1} {user2}{user2_suffix} кутакка утырткан",
-        "emoji_id": "5362034865376073854"
+        "emoji_id": "5362034865376073854",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -88,7 +88,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/30/25/73/302573f26ec8d602ae8ba3c3f4432558.jpg",
         "message_text": "{user}{user_suffix} бәрәсе килә",
         "accept_text": "{user1} {user2}{user2_suffix} бәрде",
-        "emoji_id": "5258494826051021952"
+        "emoji_id": "5258494826051021952",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     }, 
@@ -98,7 +98,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/73/b8/98/73b898b6553603a95765619bd5978726.jpg",
         "message_text": "{user}{user_suffix} сегәсе килә",
         "accept_text": "{user1} {user2}{user2_suffix} секте",
-        "emoji_id": "5258145658094757763"
+        "emoji_id": "5258145658094757763",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -108,7 +108,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/d9/b0/71/d9b07129102394be1d9e77941dd32b74.jpg",
         "message_text": "{user}{user_suffix} көчлисе килә",
         "accept_text": "{user1} {user2}{user2_suffix} көлчәдә",
-        "emoji_id": "5258200530596932833"
+        "emoji_id": "5258200530596932833",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -118,7 +118,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/f2/8c/fd/f28cfda4ed89af625a5c001004dfe42b.jpg",
         "message_text": "{user}{user_suffix} бәйлисе килә",
         "accept_text": "{user1} {user2}{user2_suffix} бәйледә",
-        "emoji_id": "5258360608323021231"
+        "emoji_id": "5258360608323021231",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -128,7 +128,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/cb/70/32/cb7032bf5306c7a6c4abbc03f114f12c.jpg",
         "message_text": "{user}{user_suffix} мәҗбүр итәсе килә",
         "accept_text": "{user1} {user2}{user2_suffix} мәҗбүр итте",
-        "emoji_id": "5258307084440580039"
+        "emoji_id": "5258307084440580039",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -138,7 +138,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/a9/19/85/a9198533d559ddc0d6f0b972fca1c98c.jpg",
         "message_text": "{user}{user_suffix} асасы килә",
         "accept_text": "{user1} {user2}{user2_suffix} асты",
-        "emoji_id": "5258307084440580039"
+        "emoji_id": "5258307084440580039",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -148,7 +148,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/0f/e8/76/0fe87604a8aab6eea487bd8cfa825c28.jpg",
         "message_text": "{user}{user_suffix} юк итәсе килә",
         "accept_text": "{user1} {user2}{user2_suffix} юк итте",
-        "emoji_id": "5298907281440643579"
+        "emoji_id": "5298907281440643579",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -158,7 +158,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/bd/b9/4f/bdb94f56d0ff74a8a3d1f2748d69921a.jpg",
         "message_text": "{user}{user_suffix} сатасы килә",
         "accept_text": "{user1} {user2}{user2_suffix} сатты",
-        "emoji_id": "5240290577102152084"
+        "emoji_id": "5240290577102152084",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -168,7 +168,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/80/58/18/805818f643f8de1a04c6a5977adcf901.jpg",
         "message_text": "{user}{user_suffix} кытыклыйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} кытыклады",
-        "emoji_id": "5230932994415404463"
+        "emoji_id": "5230932994415404463",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -178,7 +178,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/ee/3a/38/ee3a381a1c9efcde170fd28ab861f332.jpg",
         "message_text": "{user}{user_suffix} шартлыйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} шартлады",
-        "emoji_id": "5337164002550097692"
+        "emoji_id": "5337164002550097692",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -188,7 +188,7 @@ rp_commands = [
         "thumb_url": "https://tse1.explicit.bing.net/th/id/OIP.ZaTYcJXfo8bSZId1sMi2HgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
         "message_text": "{user}{user_suffix} мылтыктан атыйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} мылтыктан атты",
-        "emoji_id": "5197253492967743921"
+        "emoji_id": "5197253492967743921",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -198,7 +198,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/57/f5/78/57f578c6e13257e30873c7d649732a03.jpg",
         "message_text": "{user}{user_suffix} үбешәсе килә",
         "accept_text": "{user1} {user2} белән үбеште",
-        "emoji_id": "5190818425072534085"
+        "emoji_id": "5190818425072534085",
         "initiator_case": "possessive"
     },
     {
@@ -207,7 +207,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/42/af/09/42af0918ddfaaf26462805a93f7e26f6.jpg",
         "message_text": "{user}{user_suffix} яныңа ятасы килә",
         "accept_text": "{user1} {user2} янына ятты",
-        "emoji_id": "5370831009937890906"
+        "emoji_id": "5370831009937890906",
         "initiator_case": "possessive"
     },
     {
@@ -216,7 +216,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/f8/41/eb/f841eb0605f6c8a93176c5960dc0fc9e.jpg",
         "message_text": "{user}{user_suffix} хурлыйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} хурлады",
-        "emoji_id": "5361597229683449359"
+        "emoji_id": "5361597229683449359",
         "initiator_case": "possessive",
         "target_case": "accusative" 
     },
@@ -226,7 +226,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/d0/4b/41/d04b412a3c2596572b65ec57237f1908.jpg",
         "message_text": "{user}{user_suffix} уңышлар телисе килә",
         "accept_text": "{user1} {user2}{user2_suffix} уңышлар теләде",
-        "emoji_id": "5195111279244619776"
+        "emoji_id": "5195111279244619776",
         "initiator_case": "possessive",
         "target_case": "dative" 
     },
@@ -236,7 +236,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/1200x/17/4b/ff/174bff1f21668f79fbd7af8b39ee8147.jpg",
         "message_text": "{user}{user_suffix} суырасы килә",
         "accept_text": "{user1} {user2}{user2_suffix} суырды",
-        "emoji_id": "5260557290821396957"
+        "emoji_id": "5260557290821396957",
         "initiator_case": "possessive",
         "target_case": "from" 
     },
@@ -246,7 +246,7 @@ rp_commands = [
         "thumb_url": "https://i.pinimg.com/736x/61/5b/0c/615b0cf1ec0b571b955251bb6c19b18b.jpg",
         "message_text": "{user}{user_suffix} ялыйсы килә",
         "accept_text": "{user1} {user2}{user2_suffix} ялады",
-        "emoji_id": "5260516943898620211"
+        "emoji_id": "5260516943898620211",
         "initiator_case": "possessive",
         "target_case": "from"
     }
@@ -527,5 +527,6 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
