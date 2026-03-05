@@ -406,7 +406,10 @@ async def inline_rp_handler(query: types.InlineQuery):
             )
         )
 
-    await query.answer(results, cache_time=0)
+    try:
+        await query.answer(results, cache_time=0)
+    except Exception as e:
+        print("Inline query error:", e)
 
 # ----- accept handler -----
 @rp_router.callback_query(F.data.startswith("accept:"))
@@ -551,6 +554,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
