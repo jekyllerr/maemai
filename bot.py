@@ -17,17 +17,17 @@ dp.include_router(rp_router)
 dp.include_router(admin_router)
 
 # Обработчик вебхука
-async def handle_webhook(request):
+async def handle_webhook(request: web.Request):
     data = await request.json()
     update = Update.parse_obj(data)
-    await dp.process_update(update)
+    # В Aiogram 3.x правильно так:
+    await dp.feed_update(update)
     return web.Response(text="ok")
 
-# Создаем приложение aiohttp
 app = web.Application()
-app.router.add_post("/", handle_webhook)  # Вебхук Telegram отправляет POST на "/"
+app.router.add_post("/", handle_webhook)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Render использует переменную PORT
+    port = int(os.environ.get("PORT", 10000))
     logging.info(f"Running on port {port}")
     web.run_app(app, host="0.0.0.0", port=port)
