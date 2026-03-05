@@ -258,26 +258,49 @@ from uuid import uuid4
 requests = {}
 
 # Функция для суффиксов
-def get_suffix(name: str, case: str = "accusative") -> str:
-    """Возвращает суффикс для татарских имён по падежу"""
-    last_char = name[-1].lower()
-    
-    # possessive (-нең/-ның)
+def get_suffix(name: str, case: str = "accusative"):
+    vowels_back = "аоуыАОУЫ"
+    vowels_front = "әөүеиӘӨҮЕИ"
+    voiceless = "пфктшсчхцПФКТШСЧХЦ"
+
+    last_letter = name[-1]
+
+    # ищем последнюю гласную
+    last_vowel = None
+    for c in reversed(name):
+        if c in vowels_back + vowels_front:
+            last_vowel = c
+            break
+
+    if not last_vowel:
+        return ""
+
+    front = last_vowel in vowels_front
+
+    # -------- ACCUSATIVE --------
+    if case == "accusative":
+        return "не" if front else "ны"
+
+    # -------- POSSESSIVE --------
     if case == "possessive":
-        return "нең" if last_char in "мн" else "ның"
-    
-    # dative (-кә/-гә)
-    elif case == "dative":
-        return "гә" if last_char in "нг" else "кә"
-    
-    # accusative (-не/-ны)
-    elif case == "accusative":
-        return "не" if last_char in "нг" else "ны"
-    
-    # from (-дан/-дән)
-    elif case == "from":
-        return "дән" if last_char in "мн" else "дан"
-    
+        return "нең" if front else "ның"
+
+    # -------- DATIVE --------
+    if case == "dative":
+        if last_letter in voiceless:
+            return "кә" if front else "ка"
+        else:
+            return "гә" if front else "га"
+
+    # -------- FROM (ABLATIVE) --------
+    if case == "from":
+        if last_letter.lower() == "н":
+            return "нән" if front else "нан"
+        elif last_letter in voiceless:
+            return "тән" if front else "тан"
+        else:
+            return "дән" if front else "дан"
+
     return ""
 
 def utf16_len(s: str) -> int:
@@ -528,6 +551,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
