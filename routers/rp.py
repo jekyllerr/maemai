@@ -33,6 +33,26 @@ rp_commands = [
         "target_case": "accusative" 
     },
     {
+        "title": "Уңышлар теләргә",
+        "description": "Әңгәмәдәшкә уңышлар теләргә",
+        "thumb_url": "https://i.pinimg.com/736x/d0/4b/41/d04b412a3c2596572b65ec57237f1908.jpg",
+        "message_text": "{user}{user_suffix} уңышлар телисе килә",
+        "accept_text": "{user1} {user2}{user2_suffix} уңышлар теләде",
+        "emoji_id": "5195111279244619776",
+        "initiator_case": "possessive",
+        "target_case": "dative" 
+    },
+    {
+        "title": "Котларга",
+        "description": "Әңгәмәдәшне котларга",
+        "thumb_url": "https://i.pinimg.com/736x/c6/8b/4a/c68b4a2ef18cbe02e3a977aad58d7870.jpg",
+        "message_text": "{user}{user_suffix} котлыйсы килә",
+        "accept_text": "{user1} {user2}{user2_suffix} котлады",
+        "emoji_id": "5368760440564227004",
+        "initiator_case": "possessive",
+        "target_case": "accusative" 
+    },
+    {
         "title": "Кыйнарга",
         "description": "Әңгәмәдәшне кыйнарга",
         "thumb_url": "https://i.pinimg.com/736x/60/c2/80/60c2806881ff18faf834da9cbddb02b2.jpg",
@@ -72,16 +92,6 @@ rp_commands = [
         "target_case": "accusative" 
     },
     {
-        "title": "Кутакка утыртырга",
-        "description": "Әңгәмәдәшне кутакка утыртырга",
-        "thumb_url": "https://i.pinimg.com/736x/ec/63/8f/ec638fc2fb82ae17518275daceaaf7e0.jpg",
-        "message_text": "{user}{user_suffix} кутакка утырасы килә",
-        "accept_text": "{user1} {user2}{user2_suffix} кутакка утырткан",
-        "emoji_id": "5362034865376073854",
-        "initiator_case": "possessive",
-        "target_case": "accusative" 
-    },
-    {
         "title": "Бәрергә",
         "description": "Әңгәмәдәшкә бәрергә",
         "thumb_url": "https://i.pinimg.com/736x/30/25/73/302573f26ec8d602ae8ba3c3f4432558.jpg",
@@ -91,26 +101,6 @@ rp_commands = [
         "initiator_case": "possessive",
         "target_case": "accusative" 
     }, 
-    {
-        "title": "Сегәргә",
-        "description": "Әңгәмәдәшне сегәргә",
-        "thumb_url": "https://i.pinimg.com/736x/73/b8/98/73b898b6553603a95765619bd5978726.jpg",
-        "message_text": "{user}{user_suffix} сегәсе килә",
-        "accept_text": "{user1} {user2}{user2_suffix} секте",
-        "emoji_id": "5258145658094757763",
-        "initiator_case": "possessive",
-        "target_case": "accusative" 
-    },
-    {
-        "title": "Көчләргә",
-        "description": "Әңгәмәдәшне көчләргә",
-        "thumb_url": "https://i.pinimg.com/736x/d9/b0/71/d9b07129102394be1d9e77941dd32b74.jpg",
-        "message_text": "{user}{user_suffix} көчлисе килә",
-        "accept_text": "{user1} {user2}{user2_suffix} көлчәдә",
-        "emoji_id": "5258200530596932833",
-        "initiator_case": "possessive",
-        "target_case": "accusative" 
-    },
     {
         "title": "Бәйләргә",
         "description": "Әңгәмәдәшне бәйләргә",
@@ -220,14 +210,34 @@ rp_commands = [
         "target_case": "accusative" 
     },
     {
-        "title": "Уңышлар теләргә",
-        "description": "Әңгәмәдәшкә уңышлар теләргә",
-        "thumb_url": "https://i.pinimg.com/736x/d0/4b/41/d04b412a3c2596572b65ec57237f1908.jpg",
-        "message_text": "{user}{user_suffix} уңышлар телисе килә",
-        "accept_text": "{user1} {user2}{user2_suffix} уңышлар теләде",
-        "emoji_id": "5195111279244619776",
+        "title": "Кутакка утыртырга",
+        "description": "Әңгәмәдәшне кутакка утыртырга",
+        "thumb_url": "https://i.pinimg.com/736x/ec/63/8f/ec638fc2fb82ae17518275daceaaf7e0.jpg",
+        "message_text": "{user}{user_suffix} кутакка утырасы килә",
+        "accept_text": "{user1} {user2}{user2_suffix} кутакка утырткан",
+        "emoji_id": "5362034865376073854",
         "initiator_case": "possessive",
-        "target_case": "dative" 
+        "target_case": "accusative" 
+    },
+    {
+        "title": "Сегәргә",
+        "description": "Әңгәмәдәшне сегәргә",
+        "thumb_url": "https://i.pinimg.com/736x/73/b8/98/73b898b6553603a95765619bd5978726.jpg",
+        "message_text": "{user}{user_suffix} сегәсе килә",
+        "accept_text": "{user1} {user2}{user2_suffix} секте",
+        "emoji_id": "5258145658094757763",
+        "initiator_case": "possessive",
+        "target_case": "accusative" 
+    },
+    {
+        "title": "Көчләргә",
+        "description": "Әңгәмәдәшне көчләргә",
+        "thumb_url": "https://i.pinimg.com/736x/d9/b0/71/d9b07129102394be1d9e77941dd32b74.jpg",
+        "message_text": "{user}{user_suffix} көчлисе килә",
+        "accept_text": "{user1} {user2}{user2_suffix} көлчәдә",
+        "emoji_id": "5258200530596932833",
+        "initiator_case": "possessive",
+        "target_case": "accusative" 
     },
     {
         "title": "Суырырга",
@@ -554,6 +564,7 @@ async def decline_handler(callback: types.CallbackQuery):
 
     requests.pop(request_id, None)
     await callback.answer()
+
 
 
 
